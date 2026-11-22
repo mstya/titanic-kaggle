@@ -1,4 +1,7 @@
-Exp #,Notebook,Val Accuracy,Test Accuracy,Settings,Notes
-1,01,0.7374301675977654,0.67464,"random_state=42, max_depth=3, criterion=gini",Baseline model
-,,,,,
-,,,,,
+Exp #,Notebook,Val Accuracy,Val Precision,Val Recall,Val F1,Test Accuracy,Settings,Notes
+1,01,0.7374301675977654,0.64,0.71,0.68,0.67464,"random_state=42, max_depth=3, criterion=gini",Baseline model
+2,01,0.6703910614525139,0.75,0.22,0.34 ,0.65789,"random_state=42, max_depth=3, criterion=gini, threshold=0.7",Predict 1 if probability >= threshold
+3,01,0.7150837988826816,0.71,0.43,0.54,0.68181,"random_state=42, max_depth=10, criterion=gini, threshold=0.7",Increased max_depth
+4,01,0.7262569832402235,0.70 ,0.51,0.59,0.67703,"random_state=42, max_depth=10, criterion=gini, threshold=0.5",Decreased threshold
+5,01,0.7262569832402235,0.75,0.43,0.55,0.67942,"random_state=42, max_depth=10, criterion=gini, threshold=0.5, min_samples_split=6",Set min_samples_split
+6,01,0.7262569832402235,0.73,0.46,0.57,0.69617,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20","Used grid search to define min_samples_split and min_samples_leaf, used precision_recall_curve to find threshold for better P and R.  "
