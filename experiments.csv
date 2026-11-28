@@ -1,7 +1,25 @@
-Exp #,Notebook,Val Accuracy,Val Precision,Val Recall,Val F1,Test Accuracy,Settings,Notes
-1,01,0.7374301675977654,0.64,0.71,0.68,0.67464,"random_state=42, max_depth=3, criterion=gini",Baseline model
-2,01,0.6703910614525139,0.75,0.22,0.34 ,0.65789,"random_state=42, max_depth=3, criterion=gini, threshold=0.7",Predict 1 if probability >= threshold
-3,01,0.7150837988826816,0.71,0.43,0.54,0.68181,"random_state=42, max_depth=10, criterion=gini, threshold=0.7",Increased max_depth
-4,01,0.7262569832402235,0.70 ,0.51,0.59,0.67703,"random_state=42, max_depth=10, criterion=gini, threshold=0.5",Decreased threshold
-5,01,0.7262569832402235,0.75,0.43,0.55,0.67942,"random_state=42, max_depth=10, criterion=gini, threshold=0.5, min_samples_split=6",Set min_samples_split
-6,01,0.7262569832402235,0.73,0.46,0.57,0.69617,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20","Used grid search to define min_samples_split and min_samples_leaf, used precision_recall_curve to find threshold for better P and R.  "
+Val Accuracy,Val Precision,Val Recall,Val F1,Test Accuracy,Settings,Notes
+0.7374301675977654,0.64,0.71,0.68,0.67464,"random_state=42, max_depth=3, criterion=gini",Baseline model
+0.6703910614525139,0.75,0.22,0.34 ,0.65789,"random_state=42, max_depth=3, criterion=gini, threshold=0.7",Predict 1 if probability >= threshold
+0.7150837988826816,0.71,0.43,0.54,0.68181,"random_state=42, max_depth=10, criterion=gini, threshold=0.7",Increased max_depth
+0.7262569832402235,0.70 ,0.51,0.59,0.67703,"random_state=42, max_depth=10, criterion=gini, threshold=0.5",Decreased threshold
+0.7262569832402235,0.75,0.43,0.55,0.67942,"random_state=42, max_depth=10, criterion=gini, threshold=0.5, min_samples_split=6",Set min_samples_split
+0.7262569832402235,0.73,0.46,0.57,0.69617,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20","Used grid search to define min_samples_split and min_samples_leaf, used precision_recall_curve to find threshold for better P and R.  "
+0.7877094972067039,0.73,0.71,0.72,0.76555,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Added sex field with an Ord transform
+0.7821229050279329,0.75,0.65,0.70,0.76076,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Added age column with mean imputer
+0.7821229050279329,0.75,0.65,0.70,0.76076,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",age with most_frequent imputer
+0.7821229050279329,0.75,0.65,0.70,0.76076,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",age with median imputer
+0.7597765363128491,0.76,0.55,0.64,0.73923,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Cabin was splitted. Now CabinType is used.
+0.7597765363128491,0.76,0.55,0.64,0.73923,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Added cabin num
+0.8044692737430168,0.87,0.58,0.70,0.77990,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Used OneHot for Pclass
+0.8324022346368715,0.88,0.65,0.75,0.78229,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Added missed Fare column
+0.8324022346368715,0.88,0.65,0.75,0.78229,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Extracted title from Name
+0.7988826815642458,0.78,0.67,0.72,0.75598,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=30, min_samples_leaf=20",Updated feature extraction logic
+0.7932960893854749,0.79,0.64,0.70,0.75598,"random_state=42, max_depth=10, criterion=gini, threshold=0.61, min_samples_split=50, min_samples_leaf=10",Changed splits after cross validation
+0.8268156424581006,0.79,0.75,0.77,0.75837,"random_state=42, max_depth=10, criterion=gini, threshold=0.5, min_samples_split=50, min_samples_leaf=10",Set threshold as 0.5
+0.8100558659217877,0.76,0.74,0.75,0.78229,"n_estimators=100, random_state=42, max_depth=10, criterion=gini, threshold=0.5, min_samples_split=50, min_samples_leaf=10",Random forest model
+0.8156424581005587,0.76,0.77,0.76,0.75358,"random_state=42, n_estimators=100",XGB model
+0.8212290502793296,0.78,0.75,0.76,0.74162,"random_state=42, n_estimators=100, max_depth=10",XGB model set max_depth
+0.8324022346368715,0.79,0.77,0.78,0.75598,"random_state=42, n_estimators=100, max_depth=10, lr=0.04",Found best LR
+0.8435754189944135,0.81,0.78,0.79,0.76555,"max_iter=1000, C=0.5, random_state=42",Tried logistic regression
+,,,,,,
